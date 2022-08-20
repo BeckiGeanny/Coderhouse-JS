@@ -1,36 +1,28 @@
-const useremail = prompt("What's your email")
-user.email = useremail
-console.log(user)
+const buttonContact = document.querySelector(".contact-us")
+const emailInputDiv = document.getElementById("contactField")
+const emailInputField = document.getElementById("emailInput")
+const emailSendBtn = document.getElementById("sendEmailBtn")
+const responseToContact = document.getElementById("responseToContact")
 
-let helpOption = prompt("What type of help do you need?");
-switch (helpOption.toLowerCase()) {
-    case "organization":
-        alert("You are lucky, we've got what you need");
-        break
-    case "clean-Up":
-        alert("You are lucky, we've got what you need");
-        break   
-    case "processes":
-        alert("You are lucky, we've got what you need");
-        break 
-    case "consultation":
-        alert("You are lucky, we've got what you need");
-        break
-    default: 
-        alert("Sorry, try again")
-        break                   
+buttonContact.addEventListener("click", () => showEmailInput())
+emailSendBtn.addEventListener("click", () => storeEmailClick())
+emailInputField.addEventListener("keydown", (e) => storeEmail(e))
+
+
+let showEmailInput = () => {
+    emailInputDiv.style.display = "block"
 }
 
-
-function estimate() {
-    num1 = parseFloat(prompt("How many employees do you have?"))
-    num2 = parseFloat(prompt("How many hours do you spent searching for relevant data?"))
-    resultEstimate = result(num1, num2)
-    console.log("Estimated cost for project:", resultEstimate)
+let storeEmail = (e) => {
+    if (e.key === "Enter") {
+        contactEmail = emailInputField.value
+        console.log(contactEmail)
+        responseToContact.innerText = `Keep an eye on your email: ${contactEmail}`
+    }
 }
 
-function result(num1, num2) {
-    return num1 * num2
+let storeEmailClick = () => {
+    contactEmail = emailInputField.value
+    console.log(contactEmail)
+    responseToContact.innerText = `Keep an eye on your email: ${contactEmail}`
 }
-
-estimate()

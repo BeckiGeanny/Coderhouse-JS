@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="./variables.js"></script>
+    <script defer src="./desafio.js"></script>
+    <script defer src="./services.class.js"></script>
+    <script defer src="./services.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Declutter your online business</h1>
@@ -32,17 +37,25 @@
             <td>full month</td>
         </tr>
     </table>
-    <button>Click here to get organized!</button>
+    <br>
+    <div>
+        <button class="button">GET ORGANIZED</button>
+        <button class="button contact-us">CONTACT US</button>
+        <button class="button search">SEARCH</button>
+    </div>
+    <div id="contactField" class="contactField">
+        <label for="email">email:</label>
+        <input type="email" name="email" id="emailInput">
+        <button id="sendEmailBtn">send</button>
+        <p id="responseToContact"></p>
+    </div>
     <article class="container">
         <div>
+            <p>Select a service that you need:</p>
             <select name="selectPais" id="selectPais">
                 <option value="" selected disabled>...</option>
             </select>
         </div>
     </article>
-    <script src="./variables.js"></script>
-    <script src="./desafio.js"></script>
-    <script src="./services.class.js"></script>
-    <script src="./services.js"></script>
 </body>
 </html>
