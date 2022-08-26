@@ -23,6 +23,13 @@ let storeEmail = (e) => {
 
 let storeEmailClick = () => {
     contactEmail = emailInputField.value
+    localStorage.setItem("email", contactEmail)
     console.log(contactEmail)
     responseToContact.innerText = `Keep an eye on your email: ${contactEmail}`
+}
+
+console.log(emailInputField)
+
+if (localStorage.getItem("email")){
+   emailInputField.value = localStorage.getItem("email")
 }
